@@ -1,0 +1,149 @@
+pipboy:
+  # Standard HA theme variables
+  primary-color: "#33ff33"
+  light-primary-color: "#66ff66"
+  primary-background-color: "#001a00"
+  secondary-background-color: "#000000"
+  primary-text-color: "#33ff33"
+  secondary-text-color: "#66ff66"
+  text-primary-color: "#33ff33"
+  disabled-text-color: "#006600"
+  app-header-background-color: "#001a00"
+  card-background-color: "rgba(0, 20, 0, 0.7)"
+  ha-card-border-radius: '6px'
+  ha-card-box-shadow: "0 0 10px rgba(51, 255, 51, 0.3)"
+  lovelace-background: 'center / cover no-repeat url("/local/images/pipboy.jpg") fixed'
+
+  # Sidebar Styling
+  sidebar-background-color: "#3a3a2d"
+  sidebar-text-color: "#d4a017"
+  sidebar-icon-color: "#d4a017"
+  sidebar-selected-background-color: "rgba(212, 160, 23, 0.2)"
+  sidebar-selected-text-color: "#e6b923"
+  sidebar-selected-icon-color: "#e6b923"
+
+  # Global MDC variable override
+  mdc-text-field-fill-color: "#1a2d1a"
+  input-fill-color: "#1a2d1a"
+  mdc-text-field-ink-color: "#d4a017"  # Changed from green to yellow-brownish
+  mdc-typography-headline6-font-size: "1.5rem"  # Larger headers
+
+  # Form field header colors
+  label-badge-text-color: "#d4a017"
+  paper-font-subhead_-_color: "#d4a017"
+  paper-grey-50: "#d4a017"
+  paper-item-icon-color: "#d4a017"
+  paper-item-selected_-_background-color: "rgba(26, 45, 26, 0.9)"
+  paper-listbox-background-color: "#1a2d1a"
+  paper-listbox-color: "#d4a017"
+  paper-slider-knob-color: "#d4a017"
+  
+  paper-dropdown-menu-color: "#d4a017"
+  paper-dropdown-menu-focus-color: "#e6b923"
+  paper-item-icon_-_color: "#d4a017"
+  paper-item-hover_-_background-color: "rgba(212, 160, 23, 0.3)"
+  paper-item-select_-_background-color: "rgba(26, 45, 26, 0.9)"
+  paper-menu-background-color: "#1a2d1a"
+  paper-menu-color: "#d4a017"
+  paper-slider-active-color: "#d4a017"
+
+  # Card-mod theme
+  card-mod-theme: pipboy
+
+  # View with CRT effect
+  card-mod-view: |
+    hui-view {
+      background: url("/local/images/pipboy.jpg") center / cover no-repeat fixed !important;
+      position: relative;
+      overflow: hidden;
+      padding-top: 20px;
+      border-radius: 20px;
+      box-shadow: 
+        inset 0 0 40px rgba(0, 0, 0, 0.8),
+        inset 0 0 20px rgba(51, 255, 51, 0.3);
+    }
+
+    hui-view::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%),
+        linear-gradient(90deg, rgba(51, 255, 51, 0.04), rgba(0, 0, 0, 0.03), rgba(51, 255, 51, 0.04));
+      background-size: 100% 3px, 5px 100%;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.85;
+      animation: scanline 6s linear infinite;
+    }
+
+    hui-view::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 20, 0, 0.15);
+      opacity: 0;
+      z-index: 1000;
+      pointer-events: none;
+      animation: flicker 0.12s infinite;
+    }
+
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.3; }
+      5% { opacity: 0.22; }
+      10% { opacity: 0.27; }
+      15% { opacity: 0.18; }
+      20% { opacity: 0.32; }
+      25% { opacity: 0.24; }
+      30% { opacity: 0.29; }
+      35% { opacity: 0.2; }
+      40% { opacity: 0.27; }
+      45% { opacity: 0.23; }
+      100% { opacity: 0.3; }
+    }
+
+    /* Calendar Day Number Styling */
+    .fc-daygrid-day-number {
+      color: #d4a017 !important;
+      font-family: "Share Tech Mono", monospace !important;
+      text-shadow: 0 0 2px rgba(212, 160, 23, 0.5) !important;
+    }
+
+    /* Calendar styling */
+    .fc .fc-day-header,
+    .fc .fc-day-top,
+    .fc-day-grid-event .fc-content,
+    .fc-list-item-title {
+      color: #d4a017 !important;
+      font-family: "Share Tech Mono", monospace !important;
+    }
+
+    .fc-day-grid-event {
+      background-color: #1a2d1a !important;
+      border: 1px solid #33ff33 !important;
+    }
+
+    .fc-today {
+      background-color: rgba(51, 255, 51, 0.1) !important;
+    }
+
+  # Card styling
+  card-mod-card: |
+    ha-card {
+      border: 2px solid #33ff33;
+      position: relative;
+      box-shadow: 0 0 5px rgba(51, 255, 51, 0.6),
+                  inset 0 0 3px rgba(51, 255, 51,
