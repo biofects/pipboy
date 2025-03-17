@@ -39,7 +39,30 @@ This theme transforms your Home Assistant interface into a Pipboy-like terminal 
 
 ## Installation
 
-### Setup Instructions
+### HACS Installation (Custom Repository)
+
+1. Make sure [HACS](https://hacs.xyz/) is installed in your Home Assistant instance
+2. In the HACS panel, click on the three dots in the top right corner
+3. Select "Custom repositories"
+4. Add the following information:
+   - Repository: `https://github.com/biofects/pipboy/`
+   - Category: Themes
+5. Click "Add"
+6. Now go to the "Frontend" section in the HACS sidebar
+7. Click the "+" button in the bottom right corner
+8. Find "Pipboy " in the list and click on it
+9. Click "Install" in the bottom right corner
+10. Add the following to your `configuration.yaml` if you haven't already:
+
+```yaml
+frontend:
+  themes: !include_dir_merge_named themes
+```
+
+11. Restart Home Assistant
+12. Go to your user profile (click on your user icon in the sidebar) and select the "Pipboy" theme
+
+### Manual Installation (Alternative)
 
 1. Install **card-mod** via HACS or manually (see [card-mod installation](https://github.com/thomasloven/lovelace-card-mod#installation))
 2. Create a `themes` folder in your Home Assistant configuration directory if it doesn't exist already
