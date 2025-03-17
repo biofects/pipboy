@@ -2,7 +2,11 @@
 
 A Fallout-inspired Pipboy terminal theme for Home Assistant with CRT scan line effects, green-on-black color scheme, and retro terminal aesthetics.
 
-![Pipboy Theme Preview](https://via.placeholder.com/800x450)
+---
+
+<p align="center">
+  <img src="images/pipboy-example.png" alt="Pipboy UI Theme" width="400"/>
+</p>
 
 ---
 
